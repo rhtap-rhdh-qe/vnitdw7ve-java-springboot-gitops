@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vnitdw7ve-java-springboot-gitops
+  description: This is GitOps manifest for vnitdw7ve-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=vnitdw7ve-java-springboot
+    backstage.io/kubernetes-id: vnitdw7ve-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: vnitdw7ve-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vnitdw7ve-java-springboot
